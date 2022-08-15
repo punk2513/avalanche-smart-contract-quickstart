@@ -1,6 +1,6 @@
-import { 
-  Contract, 
-  ContractFactory 
+import {
+  Contract,
+  ContractFactory
 } from "ethers"
 import { ethers } from "hardhat"
 

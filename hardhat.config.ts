@@ -3,6 +3,9 @@ import { SignerWithAddress } from "@nomiclabs/hardhat-ethers/signers"
 import { BigNumber } from "ethers"
 import "@nomiclabs/hardhat-waffle"
 
+// priv key here
+const TESTNET_PRIVATE_KEY = "HERE";
+
 // When using the hardhat network, you may choose to fork Fuji or Avalanche Mainnet
 // This will allow you to debug contracts using the hardhat network while keeping the current network state
 // To enable forking, turn one of these booleans on, and then run your tasks/scripts using ``--network hardhat``
@@ -83,11 +86,15 @@ export default {
       chainId: 43113,
       accounts: []
     },
+    rinkeby: {
+      url: 'https://rinkeby.infura.io/v3/9aa3d95b3bc440fa88ea12eaa4456161',
+      chainId: 4,
+      accounts: [`0x${TESTNET_PRIVATE_KEY}`]
+    },
     mainnet: {
-      url: 'https://api.avax.network/ext/bc/C/rpc',
-      gasPrice: 225000000000,
-      chainId: 43114,
-      accounts: []
+      url: 'https://mainnet.infura.io/v3/9aa3d95b3bc440fa88ea12eaa4456161',
+      chainId: 1,
+      accounts: [`0x${TESTNET_PRIVATE_KEY}`]
     }
   }
 }
